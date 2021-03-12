@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from shared.models import db
 
 app = Flask(__name__)
+db.init_app(app)
 
 
 @app.route('/')
