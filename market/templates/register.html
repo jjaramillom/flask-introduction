@@ -16,6 +16,12 @@
             {{ form.password(class='form-control', placeholder='password') }}
             {{ form.password_confirmation.label(class='mt-2') }}
             {{ form.password_confirmation(class='form-control', placeholder='confirm password') }}
+
+            <div class="checkbox mt-2 mb-3">
+                <h6>Already have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Log in</a>
+            </div>
+
             {{ form.submit(class='mt-4 btn btn-lg btn-block btn-primary') }}
         </form>
     </div>

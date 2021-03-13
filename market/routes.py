@@ -3,6 +3,7 @@ from market import app, db
 from market.models.Item import Item
 from market.models.User import User
 from market.forms.Register import Register
+from market.forms.Login import Login
 
 
 @app.route('/')
@@ -18,9 +19,11 @@ def market_page():
     return render_template('market.html', items=items)
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    return render_template('login.html')
+    form = Login()
+
+    return render_template('login.html', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])

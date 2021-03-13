@@ -3,7 +3,7 @@ from market.models.User import User
 from market.models.Item import Item
 
 users = [
-    User(username='jac', password='123', email='jj@jj.com')
+    User(username='jac', hashed_password='123', email='jj@jj.com')
 ]
 
 items = [
@@ -18,3 +18,16 @@ for item in items:
     db.session.add(item)
 
 db.session.commit()
+
+'''
+INITIALIZE DB
+db.drop_all()
+db.create_all();
+
+
+QUERY
+Item.query.all()
+Item.query.filter_by(name='laptop').first()
+
+
+'''
